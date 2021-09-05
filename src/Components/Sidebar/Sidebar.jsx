@@ -11,6 +11,7 @@ import DynamicFeed from "@material-ui/icons/DynamicFeedRounded";
 import Message from "@material-ui/icons/MessageRounded";
 import BusinessCenter from "@material-ui/icons/BusinessCenterRounded";
 import Report from "@material-ui/icons/ReportOutlined";
+import { Link } from "react-router-dom";
 import "./sidebar.scss";
 
 const Sidebar = () => {
@@ -20,10 +21,12 @@ const Sidebar = () => {
         <div className="sidebarMenu">
           <h3 className="sidebarTitle"> Dashboard</h3>
           <ul className="sidebarList">
-            <li className="sidebarListItem active">
-              <LineStyle className="sidebarIcon" />
-              Home
-            </li>
+            <Link to="/" className="link">
+              <li className="sidebarListItem active">
+                <LineStyle className="sidebarIcon" />
+                Home
+              </li>
+            </Link>
             <li className="sidebarListItem">
               <Timeline className="sidebarIcon" />
               Analytics
@@ -38,14 +41,19 @@ const Sidebar = () => {
         <div className="sidebarMenu">
           <h3 className="sidebarTitle"> Quick Menu</h3>
           <ul className="sidebarList">
-            <li className="sidebarListItem">
-              <Person className="sidebarIcon" />
-              Users
-            </li>
-            <li className="sidebarListItem">
-              <Storefront className="sidebarIcon" />
-              Products
-            </li>
+            <Link to="/users" className="link">
+              <li className="sidebarListItem">
+                <Person className="sidebarIcon" />
+                Users
+              </li>
+            </Link>
+
+            <Link to="/products" className="link">
+              <li className="sidebarListItem">
+                <Storefront className="sidebarIcon" />
+                Products
+              </li>
+            </Link>
             <li className="sidebarListItem">
               <Money className="sidebarIcon" />
               Transactions
